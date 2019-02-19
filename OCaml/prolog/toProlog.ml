@@ -68,7 +68,8 @@ let rec print_prolog e =
 (*		
 let _ =
 	try
-		let lexbuf = Lexing.from_channel stdin in
+	        let fd = open_in Sys.argv.(1) in
+		let lexbuf = Lexing.from_channel fd in
 		let e = Parser.line Lexer.token lexbuf in
 			print_prolog e;
 			print_char '\n'
